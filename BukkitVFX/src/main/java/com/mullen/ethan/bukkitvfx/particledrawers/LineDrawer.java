@@ -1,6 +1,7 @@
 package com.mullen.ethan.bukkitvfx.particledrawers;
 
 import org.bukkit.Location;
+import org.joml.Vector3f;
 
 import com.mullen.ethan.bukkitvfx.ParticleDrawer;
 import com.mullen.ethan.bukkitvfx.ParticlePattern;
@@ -22,9 +23,15 @@ public class LineDrawer extends ParticleDrawer {
 		this.steps = steps;
 	}
 
+	public LineDrawer(ParticlePattern pattern, Location origin, Vector3f vector, int steps) {
+		this(pattern, origin, origin.clone().add(vector.x, vector.y, vector.z), steps);
+	}
+	
 	@Override
 	public void draw() {
 		
+		if(getPattern() != null && !isSubDrawer()) getPattern().reset();
+
 		double x1 = origin.getX();
 		double y1 = origin.getY();
 		double z1 = origin.getZ();

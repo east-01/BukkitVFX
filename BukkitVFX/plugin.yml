@@ -1,5 +1,5 @@
-main: com.mullen.ethan.chestsystem.ChestSystemPlugin
-name: ChestSystem
+main: com.mullen.ethan.bukkitvfx.BukkitVFX
+name: BukkitVFX
 version: 0.1
 commands:
 api-version: 1.19

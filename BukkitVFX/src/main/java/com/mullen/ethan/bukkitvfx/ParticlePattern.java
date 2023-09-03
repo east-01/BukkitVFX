@@ -11,8 +11,13 @@ public abstract class ParticlePattern {
 	 * @return A ParticleDataUnit that will reflect the pattern
 	 */
 	public abstract ParticleDataUnit poll();
+	/**
+	 * Reset the pattern. Will be called each time the ParticleDrawer uses
+	 *   draw().
+	 */
+	public void reset() {}
 	
-	public class ParticleDataUnit {
+	public static class ParticleDataUnit {
 		private Particle type;
 		private double extra;
 		private Object data;
