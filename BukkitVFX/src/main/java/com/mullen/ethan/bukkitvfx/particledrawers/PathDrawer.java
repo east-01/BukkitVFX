@@ -9,14 +9,7 @@ public class PathDrawer extends ParticleDrawer {
 
 	private Location[] path;
 	private LineDrawer[] lineDrawers;
-	
 	private int stepsPerSegment;
-	
-	public PathDrawer(ParticlePattern pattern, Location[] path, int stepsPerSegment) {
-		super(pattern);
-		this.path = path;
-		this.stepsPerSegment = stepsPerSegment;
-	}
 
 	@Override
 	public void draw() {
@@ -43,16 +36,20 @@ public class PathDrawer extends ParticleDrawer {
 		this.lineDrawers = null;
 	}
 
-	public Location[] getPath() {
-		return path;
+	@Override
+	public PathDrawer setPattern(ParticlePattern pattern) { 
+		super.setPattern(pattern);
+		return this;
 	}
 
-	public void setPath(Location[] path) {
+	public Location[] getPath() { return path; }
+	public PathDrawer setPath(Location[] path) {
 		this.path = path;
 		this.lineDrawers = null;
+		return this;
 	}
-	
-	public void appendLocation(Location toAppend) {
+
+	public PathDrawer appendLocation(Location toAppend) {
 		Location[] newArr = new Location[path.length + 1];
 	    for (int i = 0; i < path.length; i++) {
 	        newArr[i] = path[i];
@@ -60,15 +57,14 @@ public class PathDrawer extends ParticleDrawer {
 	    newArr[newArr.length-1] = toAppend;
 	    this.path = newArr;
 	    this.lineDrawers = null;
+	    return this;
 	}
 
-	public int getStepsPerSegment() {
-		return stepsPerSegment;
-	}
-
-	public void setStepsPerSegment(int stepsPerSegment) {
+	public int getStepsPerSegment() { return stepsPerSegment; }
+	public PathDrawer setStepsPerSegment(int stepsPerSegment) {
 		this.stepsPerSegment = stepsPerSegment;
 		this.lineDrawers = null; // Invalidate the lineDrawers so we create new ones with correct info
+		return this;
 	}
 	
 }

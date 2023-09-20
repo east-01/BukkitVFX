@@ -25,7 +25,7 @@ public class BukkitVFX extends JavaPlugin {
 	
 	@Override
 	public void onEnable() {
-				
+		
 	}
 	
 	@Override
@@ -39,9 +39,9 @@ public class BukkitVFX extends JavaPlugin {
 	
 	public static ParticlePattern createCoolPattern() {
 		return new AlternatingPattern(new ParticleDataUnit[] {
-			new ParticleDataUnit(Particle.CHERRY_LEAVES),
-			new ParticleDataUnit(Particle.ASH),
-			new ParticleDataUnit(Particle.REDSTONE, 0, new Particle.DustOptions(Color.GRAY, 1))
+			new ParticleDataUnit(Particle.REDSTONE, 0, new Particle.DustOptions(Color.YELLOW, 0.25f)),
+			new ParticleDataUnit(Particle.REDSTONE, 0, new Particle.DustOptions(Color.RED, 0.25f)),
+			new ParticleDataUnit(Particle.REDSTONE, 0, new Particle.DustOptions(Color.GRAY, 0.25f))
 		});
 	}
 	

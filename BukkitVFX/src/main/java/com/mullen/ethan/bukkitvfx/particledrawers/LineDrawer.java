@@ -13,7 +13,6 @@ public class LineDrawer extends ParticleDrawer {
 	private int steps;
 	
 	public LineDrawer(ParticlePattern pattern, Location origin, Location destination, int steps) {
-		super(pattern);
 		if(!origin.getWorld().getUID().equals(destination.getWorld().getUID()))
 			throw new IllegalArgumentException("Location's worlds do not match.");
 		if(steps <= 0)
@@ -62,6 +61,30 @@ public class LineDrawer extends ParticleDrawer {
 			);
 		}
 		
+	}
+
+	@Override
+	public LineDrawer setPattern(ParticlePattern pattern) { 
+		super.setPattern(pattern);
+		return this;
+	}
+
+	public Location getOrigin() { return origin; }
+	public LineDrawer setOrigin(Location origin) {
+		this.origin = origin;
+		return this;
+	}
+
+	public Location getDestination() { return destination; }
+	public LineDrawer setDestination(Location destination) {
+		this.destination = destination;
+		return this;
+	}
+
+	public int getSteps() { return steps; }
+	public LineDrawer setSteps(int steps) {
+		this.steps = steps;
+		return this;
 	}
 
 }

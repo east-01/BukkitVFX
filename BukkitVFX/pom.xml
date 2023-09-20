@@ -2,7 +2,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.mullen.ethan.particledrawlib</groupId>
   <artifactId>particledrawlib</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
+  <version>1.0.0</version>
   <name>Particle Drawing Library</name>
   <repositories>
     <repository>

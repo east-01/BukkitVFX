@@ -14,16 +14,6 @@ public class CircleDrawer extends ParticleDrawer {
 	private double radius;
 	private int amount;
 		
-	public CircleDrawer(ParticlePattern pattern, Location origin, Vector3f rotationAxis, double radius, int amount) {
-		super(pattern);
-		if(amount <= 0)
-			throw new IllegalArgumentException("The amount of particles must be at least 1. (Provided: " + amount + ")");
-		this.origin = origin;
-		this.rotationAxis = rotationAxis;
-		this.radius = radius;
-		this.amount = amount;
-	}
-
 	@Override
 	public void draw() {
 				
@@ -75,6 +65,36 @@ public class CircleDrawer extends ParticleDrawer {
 		}
 		
 		
+	}
+
+	@Override
+	public CircleDrawer setPattern(ParticlePattern pattern) { 
+		super.setPattern(pattern);
+		return this;
+	}
+	
+	public Location getOrigin() { return origin; }
+	public CircleDrawer setOrigin(Location origin) {
+		this.origin = origin;
+		return this;
+	}
+
+	public Vector3f getRotationAxis() { return rotationAxis; }
+	public CircleDrawer setRotationAxis(Vector3f rotationAxis) {
+		this.rotationAxis = rotationAxis;
+		return this;
+	}
+
+	public double getRadius() { return radius; }
+	public CircleDrawer setRadius(double radius) {
+		this.radius = radius;
+		return this;
+	}
+
+	public int getAmount() { return amount; }
+	public CircleDrawer setAmount(int amount) {
+		this.amount = amount;
+		return this;
 	}
 
 }
