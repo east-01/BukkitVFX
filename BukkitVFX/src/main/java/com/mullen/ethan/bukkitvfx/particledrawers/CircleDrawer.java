@@ -21,9 +21,7 @@ public class CircleDrawer extends ParticleDrawer {
 
 		/* Math explanation (thanks Ron):
 		 * 
-		 * Rotation axis vector needs to be normalized
-		 * 
-		 * Let v be the rotation axis vector
+		 * Let v be the rotation axis vector (must be normalized)
 		 * 
 		 * We need to find vector u such that u (dot) v = 0
 		 * To find arbitrary u vector (orthogonal to v), we can say
